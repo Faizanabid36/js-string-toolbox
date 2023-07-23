@@ -1,9 +1,41 @@
 {
-  "name": "js-string-toolbox",
+  "name": "ts-string-toolbox",
   "version": "1.0.0",
   "description": "A collection of easy-to-use string helper functions inspired by Laravel's string utilities. Simplify your string manipulations in JavaScript with this versatile package.",
-  "main": "index.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
   "author": "Faizan Abid",
   "keywords": [],
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Faizanabid36/js-string-toolbox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Faizanabid36/js-string-toolbox/issues"
+  },
+  "homepage": "https://github.com/Faizanabid36/js-string-toolbox#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.3",
+    "jest": "^29.6.1",
+    "prettier": "^3.0.0",
+    "ts-jest": "^29.1.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^5.1.6"
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }
