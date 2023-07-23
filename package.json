@@ -1,6 +1,6 @@
 {
   "name": "ts-string-toolbox",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A collection of easy-to-use string helper functions inspired by Laravel's string utilities. Simplify your string manipulations in JavaScript with this versatile package.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
