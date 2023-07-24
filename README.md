@@ -52,6 +52,20 @@ ascii('û')
 
 ```
 
+### begin
+
+The `begin` method adds a single instance of the given value to a string if it does not already start with that value:
+
+```
+
+begin('this/string', '/')
+//  '/this/string'
+
+begin('/this/string', '/')
+//  '/this/string'
+
+```
+
 ### before
 
 The `before` method returns everything before the given value in a string:
@@ -478,20 +492,6 @@ The `squish` method removes all extraneous white space from a string, including 
 
 squish('    my    name    ')
 //  'my name'
-
-```
-
-### start
-
-The `start` method adds a single instance of the given value to a string if it does not already start with that value:
-
-```
-
-start('this/string', '/')
-//  '/this/string'
-
-start('/this/string', '/')
-//  '/this/string'
 
 ```
 

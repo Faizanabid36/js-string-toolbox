@@ -240,15 +240,15 @@ export const slugify = (input: string, separator: string = '-'): string => {
 }
 
 export const snakeCase = (input: string, separator: string = '_'): string => {
-  const snakeCase = input.replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2');
-  return snakeCase.toLowerCase();
+  const str = input.replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2');
+  return str.toLowerCase();
 }
 
 export const  squish = (input: string): string => {
   return input.replace(/\s+/g, ' ').trim();
 }
 
-export const  start = (input: string, prefix: string): string => {
+export const  begin = (input: string, prefix: string): string => {
   return input.startsWith(prefix) ? input : prefix + input;
 }
 
