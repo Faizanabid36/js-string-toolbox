@@ -1,3 +1,6 @@
+Introduction
+-------
+
 `ts-string-toolbox`, is a lightweight JavaScript library for the browser or for Node.js that provides extra String methods.
 
 Installation
