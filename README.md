@@ -117,7 +117,7 @@ The `camelCase` method converts the given string to camel case:
 
 ```
 
-camel('foo_bar')
+camelCase('foo_bar')
 //  'fooBar'
 
 ```
@@ -287,7 +287,7 @@ The `kebabCase` method converts the given string to kebab case:
 
 ```
 
-kebab('fooBar')
+kebabCase('fooBar')
 //  'foo-bar'
 
 ```
@@ -479,7 +479,7 @@ The `snakeCase` method converts the given string to snake case:
 snakeCase('fooBar')
 //  'foo_bar'
 
-snake('fooBar', '-')
+snakeCase('fooBar', '-')
 //  'foo-bar'
 
 ```
