@@ -1,34 +1,12 @@
-export const ucFirst = (inputString: string): string => {
-  if (!inputString || inputString.length === 0) {
-    // Return an empty string if the input is null, undefined, or an empty string.
-    return '';
-  }
-
-  const firstChar = inputString.charAt(0);
-
-  // Check if the first character is already uppercase.
-  if (firstChar === firstChar.toUpperCase()) {
-    // If it is, no need to make any changes, return the original string.
-    return inputString;
-  }
-
-  // Convert the first character to uppercase and concatenate it with the rest of the string.
-  return firstChar.toUpperCase() + inputString.slice(1);
-};
-
-
 export const after = (haystack: string, needle: string): string => {
   const index = haystack.indexOf(needle);
 
   if (index === -1) {
-    // If the needle is not found in the haystack, return an empty string.
     return '';
   }
 
-  // Extract the substring after the needle and return it.
   return haystack.substring(index + needle.length);
 }
-
 
 export const afterLast = (haystack: string, needle: string): string => {
   const index = haystack.lastIndexOf(needle);
@@ -61,7 +39,6 @@ export const before = (haystack: string, needle: string): string => {
   return haystack.substring(0, index);
 }
 
-
 export const beforeLast = (haystack: string, needle: string): string => {
   const index = haystack.lastIndexOf(needle);
 
@@ -73,7 +50,6 @@ export const beforeLast = (haystack: string, needle: string): string => {
   // Extract the substring before the last occurrence of the needle and return it.
   return haystack.substring(0, index);
 }
-
 
 export const between = (haystack: string, start: string, end: string): string => {
   const startIndex = haystack.indexOf(start);
@@ -88,8 +64,7 @@ export const between = (haystack: string, start: string, end: string): string =>
   return haystack.substring(startIndex + start.length, endIndex);
 }
 
-
-export const etweenFirst = (haystack: string, start: string, end: string): string => {
+export const betweenFirst = (haystack: string, start: string, end: string): string => {
   const startIndex = haystack.indexOf(start);
 
   if (startIndex === -1) {
@@ -149,7 +124,6 @@ export const headline = (inputString: string): string => {
     .replace(/[_-]/g, ' ') // Replace underscores and hyphens with spaces
     .replace(/\b\w/g, char => char.toUpperCase()); // Capitalize the first letter of each word
 }
-
 
 export const  is = (pattern: string, value: string): boolean => {
   const patternRegex = new RegExp('^' + pattern.split('*').join('.*') + '$');
@@ -241,7 +215,7 @@ export const replaceArray = (search: string, replacements: string[], input: stri
   return input.replace(new RegExp(search, 'g'), () => replacements[index++]);
 }
 
-export const strReplaceFirst = (search: string, replace: string, input: string): string =>{
+export const replaceFirst = (search: string, replace: string, input: string): string =>{
   const index = input.indexOf(search);
   if (index === -1) {
     return input; // Return the original string if the search value is not found.
@@ -249,7 +223,7 @@ export const strReplaceFirst = (search: string, replace: string, input: string):
   return input.substring(0, index) + replace + input.substring(index + search.length);
 }
 
-export const strReplaceLast = (search: string, replace: string, input: string): string =>{
+export const replaceLast = (search: string, replace: string, input: string): string =>{
   const index = input.lastIndexOf(search);
   if (index === -1) {
     return input; // Return the original string if the search value is not found.
@@ -257,7 +231,7 @@ export const strReplaceLast = (search: string, replace: string, input: string): 
   return input.substring(0, index) + replace + input.substring(index + search.length);
 }
 
-export const strSlug = (input: string, separator: string = '-'): string => {
+export const slugify = (input: string, separator: string = '-'): string => {
   return input
     .toLowerCase()
     .trim()
@@ -265,46 +239,65 @@ export const strSlug = (input: string, separator: string = '-'): string => {
     .replace(/\s+/g, separator);
 }
 
-export const strSnake = (input: string, separator: string = '_'): string => {
+export const snakeCase = (input: string, separator: string = '_'): string => {
   const snakeCase = input.replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2');
   return snakeCase.toLowerCase();
 }
 
-export const  strSquish = (input: string): string => {
+export const  squish = (input: string): string => {
   return input.replace(/\s+/g, ' ').trim();
 }
 
-export const  strStart = (input: string, prefix: string): string => {
+export const  start = (input: string, prefix: string): string => {
   return input.startsWith(prefix) ? input : prefix + input;
 }
 
-export const strStartsWith = (input: string, search: string | string[]): boolean => {
+export const startsWith = (input: string, search: string | string[]): boolean => {
   if (Array.isArray(search)) {
     return search.some(value => input.startsWith(value));
   }
   return input.startsWith(search);
 }
 
-export const strStudly = (input: string): string => {
+export const studly = (input: string): string => {
   return input
     .split(/[^a-zA-Z\d]+/)
     .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
     .join('');
 }
 
-export const strSwap = (input: string, replacements: { [key: string]: string }): string => {
+export const swap = (input: string, replacements: { [key: string]: string }): string => {
   const regex = new RegExp(Object.keys(replacements).join('|'), 'gi');
   return input.replace(regex, match => replacements[match.toLowerCase()] || match);
 }
 
-
-export const strTitle = (input: string): string => {
+export const title = (input: string): string => {
   return input
     .toLowerCase()
     .replace(/(?:^|\s)\S/g, char => char.toUpperCase());
 }
 
-export const strWordCount = (input: string): number => {
+export const ucFirst = (inputString: string): string => {
+  if (!inputString || inputString.length === 0) {
+    // Return an empty string if the input is null, undefined, or an empty string.
+    return '';
+  }
+
+  const firstChar = inputString.charAt(0);
+
+  // Check if the first character is already uppercase.
+  if (firstChar === firstChar.toUpperCase()) {
+    // If it is, no need to make any changes, return the original string.
+    return inputString;
+  }
+
+  // Convert the first character to uppercase and concatenate it with the rest of the string.
+  return firstChar.toUpperCase() + inputString.slice(1);
+};
+
+export const upper = (input: string): string => input.toLocaleUpperCase()
+
+export const wordCount = (input: string): number => {
   const words = input.trim().split(/\s+/).filter(word => word !== '');
   return words.length;
 }

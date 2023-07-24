@@ -1,6 +1,6 @@
 {
   "name": "ts-string-toolbox",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A collection of easy-to-use string helper functions inspired by Laravel's string utilities. Simplify your string manipulations in JavaScript with this versatile package.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -16,7 +16,23 @@
     "postversion": "git push && git push --tags"
   },
   "author": "Faizan Abid",
-  "keywords": [],
+  "keywords": [
+    "string",
+    "strings",
+    "string manipulation",
+    "between",
+    "isJson",
+    "mask",
+    "maskString",
+    "slugify",
+    "swap",
+    "wordCount",
+    "camel-case",
+    "snake-case",
+    "kebab-case",
+    "studly-case",
+    "title-case"
+  ],
   "license": "ISC",
   "repository": {
     "type": "git",
